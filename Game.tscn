@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dherqpy2jl6r"]
+[gd_scene load_steps=10 format=3 uid="uid://dherqpy2jl6r"]
 
 [ext_resource type="PackedScene" uid="uid://bjh1dhaxuon5r" path="res://Player/player.tscn" id="1_2jta0"]
 [ext_resource type="PackedScene" uid="uid://cr2gymhqopntg" path="res://Terrain/terrain.tscn" id="1_wsexg"]
+[ext_resource type="PackedScene" uid="uid://btx461csnea1j" path="res://Character/Character.tscn" id="3_nclwb"]
+[ext_resource type="PackedScene" uid="uid://jdm6m681qfi" path="res://Character/Character2.tscn" id="4_14c5y"]
+[ext_resource type="AudioStream" uid="uid://0qwm4ati6w1k" path="res://Assets/blaster-2-81267.mp3" id="5_d2cqe"]
+[ext_resource type="PackedScene" uid="uid://m8f22wkh38tq" path="res://UI/main_menu.tscn" id="6_273dq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cwqc4"]
 
@@ -24,3 +28,14 @@ environment = SubResource("Environment_t1cex")
 transform = Transform3D(1, 0, 0, 0, 0.885118, 0.465367, 0, -0.465367, 0.885118, 0, 4.72235, 6.6826)
 
 [node name="Player" parent="." instance=ExtResource("1_2jta0")]
+
+[node name="Character" parent="." instance=ExtResource("3_nclwb")]
+transform = Transform3D(-0.989974, 0, -0.141247, 0, 1, 0, 0.141247, 0, -0.989974, 0.43301, -0.658651, -17.8975)
+
+[node name="Character2" parent="." instance=ExtResource("4_14c5y")]
+transform = Transform3D(0.402731, 0, 0.915318, 0, 1, 0, -0.915318, 0, 0.402731, -13.1533, -1.62643, -10.9279)
+
+[node name="shot_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d2cqe")
+
+[node name="Main_Menu" parent="." instance=ExtResource("6_273dq")]
